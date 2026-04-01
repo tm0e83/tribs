@@ -38,7 +38,7 @@ export default function StartPage() {
         <div className={styles.projects}>
           <div className={styles.sectionHeadline}>Aktuelle Projekte</div>
           <div className={styles.projectList}>
-            <a className={`${styles.project} ${styles.bg1}`} href="http://demoshop.digitalsquares.de">
+            <a className={`${styles.project} ${styles.bg1}`} href="http://demoshop.digitalsquares.de" target="_blank">
               <div className={styles.projectName}>DemoShop</div>
               <div className={styles.projectDescription}>Ein Demo-Shop.</div>
               <span className={styles.tag}>NextJS</span>
@@ -46,7 +46,7 @@ export default function StartPage() {
                 <MoveRight strokeWidth={1} />
               </div>              
             </a>
-            <a className={`${styles.project} ${styles.bg2}`} href="http://billbird.digitalsquares.de">
+            <a className={`${styles.project} ${styles.bg2}`} href="http://billbird.digitalsquares.de" target="_blank">
               <div className={styles.projectName}>BilldBird</div>
               <div className={styles.projectDescription}>Ein kleines Tool für meine Finanzverwaltung.</div>
               <span className={styles.tag}>VueJS</span>
@@ -54,7 +54,7 @@ export default function StartPage() {
                 <MoveRight strokeWidth={1} />
               </div>              
             </a>
-            <a className={`${styles.project} ${styles.bg3}`} href="http://playspot.digitalsquares.de">
+            <a className={`${styles.project} ${styles.bg3}`} href="http://playspot.digitalsquares.de" target="_blank">
               <div className={styles.projectName}>PlaySpot</div>
               <div className={styles.projectDescription}>Eine Plattform für simple Glückspiele.</div>
               <span className={styles.tag}>VanillaJS</span>
