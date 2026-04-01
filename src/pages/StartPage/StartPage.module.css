@@ -1,0 +1,226 @@
+.startPage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;    
+    max-width: 600px;
+    flex: 1;
+    padding: 2.5rem 1rem;
+  
+     @media (min-width: 800px) {
+      padding: 1rem;  
+      max-width: 980px;
+    }
+  }
+  
+  .profile {
+    max-width: 800px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 1.5rem 2.5rem;
+    margin-bottom: 3.5rem;
+
+    @media (min-width: 800px) {
+      flex-direction: row;
+    }    
+
+    .profileImage {
+      border-radius: 250px;
+      max-width: 250px;
+      transition: transform 250ms ease;
+      
+      &:hover {
+        transform: scale(1.1) rotate(-5deg);
+      }
+      
+      img {
+        filter: invert(-1);
+        overflow: hidden;
+        animation: softFadeInLeft 1.2s cubic-bezier(0.33, 1, 0.68, 1) forwards;
+        transition: transform 200ms ease;
+      }
+    }
+    
+    .description {
+      animation: softFadeInRight 1.2s cubic-bezier(0.33, 1, 0.68, 1) forwards;
+      animation-delay: 0.2s;
+      opacity: 0;
+      text-align: center;
+
+      @media (min-width: 800px) {
+        text-align: left;
+      }       
+
+      .name {
+        font-size: 1.8rem;
+        margin-bottom: 0.5rem;
+        
+        @media (min-width: 800px) {
+          font-size: 2.2rem;
+        }          
+      }
+      
+      .role {
+        font-size: 1rem;
+        color: #bbb;
+        text-transform: uppercase;
+        margin-bottom: 1rem;
+      }
+
+      .social {
+        display: flex;
+        gap: 0.5rem;
+        align-items: center;
+        justify-content: center;
+        
+        @media (min-width: 800px) {
+          justify-content: flex-start;
+        }         
+
+        img {
+          width: 1.75rem
+        }
+      }
+    }
+  }
+
+  .projects {
+    align-self: stretch;
+    animation: softFadeIn 1.2s cubic-bezier(0.33, 1, 0.68, 1) forwards;
+    animation-delay: 0.4s;
+    opacity: 0;
+
+    .sectionHeadline {
+      font-size: 1.75em;
+      font-weight: 300;
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    
+    .projectList {
+      align-self: stretch;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 1rem;
+      
+      @media (min-width: 800px) {
+        flex-direction: row;
+      }
+    }
+    
+    .project {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: flex-start;
+      flex: 1;
+      border-radius: 0.25rem;
+      background-color: #000;
+      color: #fff;
+      padding: 2.5rem 1.5rem 1.5rem;
+      text-decoration: none;
+      position: relative;
+
+      &.bg1 {
+        background: #2ec4b6;
+        background: linear-gradient(
+          135deg,
+          #2ec4b6,
+          color-mix(#2ec4b6, #000 10%)
+        );        
+      } 
+      
+      &.bg2 {
+        background: #e71d36;
+        background: linear-gradient(
+          135deg,
+          #e71d36,
+          color-mix(#e71d36, #000 10%)
+        );        
+      } 
+      
+      &.bg3 {
+        background: #ff9f1c;
+        background: linear-gradient(
+          135deg,
+          #ff9f1c,
+          color-mix(#ff9f1c, #000 10%)
+        );        
+      }       
+      
+      .projectName {
+        font-weight: 700;
+        margin-bottom: 0.25rem;
+      }
+
+      .projectDescription {
+        margin-bottom: 0.5rem;
+        font-size: 0.8em;
+      }
+      
+      .tag {
+        background-color: rgba(255, 255, 255, 0.85);
+        color: #333;
+        border-radius: 5px;
+        padding: 4px 6px;
+        font-size: 0.7em;
+      }
+
+      .arrow {
+        position: absolute;
+        bottom: 1rem;
+        right: 1rem;
+        opacity: 0;
+        transition: opacity 250ms ease, transform 250ms ease;
+      }
+      
+      &:hover {
+        .arrow {
+          opacity: 1;
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+}
+
+@keyframes softFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px); /* Startet leicht links */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes softFadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px); /* Startet leicht links */
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes softFadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px); /* Startet leicht rechts */
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
