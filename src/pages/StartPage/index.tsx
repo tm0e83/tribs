@@ -62,6 +62,14 @@ export default function StartPage() {
                 <MoveRight strokeWidth={1} />
               </div>
             </a>
+            <a className={`${styles.project} ${styles.bg4}`} href="https://github.com/tm0e83/chat" target="_blank">
+              <div className={styles.projectName}>Chat</div>
+              <div className={styles.projectDescription}>Ein Chat für meine Websites.</div>
+              <span className={styles.tag}>Vibe</span>
+              <div className={styles.arrow}>
+                <MoveRight strokeWidth={1} />
+              </div>
+            </a>
           </div>
         </div>
       </div>
