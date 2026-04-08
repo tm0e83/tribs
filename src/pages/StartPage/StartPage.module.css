@@ -85,7 +85,11 @@
         }         
 
         img {
-          width: 1.75rem
+          width: 1.75rem;
+
+          @media (prefers-color-scheme: dark) {
+            filter: invert(1);
+          }          
         }
       }
     }
@@ -130,38 +134,38 @@
       position: relative;
 
       &.bg1 {
-        background: #2274a5;
+        background: #118DFF;
         background: linear-gradient(
           135deg,
-          #2274a5,
-          color-mix(#2274a5, #000 10%)
+          #118DFF,
+          color-mix(#118DFF, #000 10%)
         );        
       } 
       
       &.bg2 {
-        background: #e83f6f;
+        background: #750985;
         background: linear-gradient(
           135deg,
-          #e83f6f,
-          color-mix(#e83f6f, #000 10%)
+          #750985,
+          color-mix(#750985, #000 10%)
         );        
       } 
       
       &.bg3 {
-        background: #ffbf00;
+        background: #C83D95;
         background: linear-gradient(
           135deg,
-          #ffbf00,
-          color-mix(#ffbf00, #000 10%)
+          #C83D95,
+          color-mix(#C83D95, #000 10%)
         );        
       }       
 
       &.bg4 {
-        background: #32936f;
+        background: #FF985E;
         background: linear-gradient(
           135deg,
-          #32936f,
-          color-mix(#32936f, #000 10%)
+          #FF985E,
+          color-mix(#FF985E, #000 10%)
         );        
       }       
       

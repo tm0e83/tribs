@@ -42,15 +42,32 @@
 :root {
   font-size: 16px;
   font-family: 'Montserrat', sans-serif;
+
+  --body-bg-color: #fff;
+  --body-text-color: #000;
+  --palette-color-1: #118DFF;
+  --palette-color-2: #750985;
+  --palette-color-3: #C83D95;
+  --palette-color-4: #FF985E;  
 }
 
 @media (prefers-color-scheme: dark) {
-
+  :root {
+    --body-bg-color: #000;
+    --body-text-color: #fff;
+  }
 }
 
 body {
   margin: 0;
   padding: 0;
+  color: var(--body-text-color);
+  background-color: var(--body-bg-color);
+}
+
+a {
+  color: var(--body-text-color);
+  text-decoration: underline;
 }
 
 p {
