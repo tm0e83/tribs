@@ -1,4 +1,5 @@
 import styles from './StartPage.module.css';
+import { Link } from 'react-router-dom';
 import { MoveRight } from 'lucide-react';
 import profileImage from '@/assets/images/timo-rs.png';
 
@@ -73,6 +74,12 @@ export default function StartPage() {
           </div>
         </div>
       </div>
+      <footer>
+        <div className={styles.footerContent}>
+          <span><Link to="">Datenschutz</Link></span>
+          <span><Link to="">Impressum</Link></span>
+        </div>
+      </footer>
     </div>
   );
 }
