@@ -1,7 +1,6 @@
 import styles from './StartPage.module.css';
-import { Link } from 'react-router-dom';
-import { MoveRight } from 'lucide-react';
 import profileImage from '@/assets/images/timo-rs.png';
+import ProjectCard from '@/components/ProjectCard';
 
 export default function StartPage() {
   return (
@@ -39,47 +38,41 @@ export default function StartPage() {
         <div className={styles.projects}>
           <div className={styles.sectionHeadline}>Aktuelle Projekte</div>
           <div className={styles.projectList}>
-            <a className={`${styles.project} ${styles.bg1}`} href="http://demoshop.digitalsquares.de" target="_blank">
-              <div className={styles.projectName}>DemoShop</div>
-              <div className={styles.projectDescription}>Ein Demo-Shop.</div>
-              <span className={styles.tag}>NextJS</span>
-              <div className={styles.arrow}>
-                <MoveRight strokeWidth={1} />
-              </div>              
-            </a>
-            <a className={`${styles.project} ${styles.bg2}`} href="http://billbird.digitalsquares.de" target="_blank">
-              <div className={styles.projectName}>BilldBird</div>
-              <div className={styles.projectDescription}>Ein kleines Tool für meine Finanzverwaltung.</div>
-              <span className={styles.tag}>VueJS</span>
-              <div className={styles.arrow}>
-                <MoveRight strokeWidth={1} />
-              </div>              
-            </a>
-            <a className={`${styles.project} ${styles.bg3}`} href="http://playspot.digitalsquares.de" target="_blank">
-              <div className={styles.projectName}>PlaySpot</div>
-              <div className={styles.projectDescription}>Eine Plattform für simple Glückspiele.</div>
-              <span className={styles.tag}>VanillaJS</span>
-              <div className={styles.arrow}>
-                <MoveRight strokeWidth={1} />
-              </div>
-            </a>
-            <a className={`${styles.project} ${styles.bg4}`} href="https://github.com/tm0e83/chat" target="_blank">
-              <div className={styles.projectName}>Chat</div>
-              <div className={styles.projectDescription}>Ein Chat für meine Websites.</div>
-              <span className={styles.tag}>Vibe</span>
-              <div className={styles.arrow}>
-                <MoveRight strokeWidth={1} />
-              </div>
-            </a>
+            <ProjectCard 
+              title="DemoShop"
+              description="Ein Demo-Shop."
+              repo="demoshop"
+              techStack={['NextJS']}
+              linkUrl="http://demoshop.digitalsquares.de"
+              projectNumber={1}
+              />
+            <ProjectCard 
+              title="BilldBird"
+              description="Ein kleines Tool für meine Finanzverwaltung."
+              repo="billbird"
+              techStack={['VueJS']}
+              linkUrl="http://billbird.digitalsquares.de"
+              projectNumber={2}
+              />
+            <ProjectCard 
+              title="PlaySpot"
+              description="Eine Plattform für simple Glückspiele."
+              repo="playspot"
+              techStack={['VanillaJS']}
+              linkUrl="http://playspot.digitalsquares.de"
+              projectNumber={3}
+              />
+            <ProjectCard 
+              title="Chat"
+              description="Ein Chat für meine Websites."
+              repo="chat"
+              techStack={['Vibe']}
+              linkUrl="https://github.com/tm0e83/chat"
+              projectNumber={4}
+            />
           </div>
         </div>
       </div>
-      <footer>
-        <div className={styles.footerContent}>
-          <span><Link to="">Datenschutz</Link></span>
-          <span><Link to="">Impressum</Link></span>
-        </div>
-      </footer>
     </div>
   );
 }
