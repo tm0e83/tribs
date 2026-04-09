@@ -41,9 +41,14 @@ export default function PrivacyPage() {
       </div>
 
       <div className={styles.section}>
-        <h2>3. Cookies</h2>
+        <h2>3. Cookies und lokaler Speicher</h2>
         <p>
-          Diese Website verwendet keine Cookies.
+          Diese Website verwendet keine Cookies. Es wird jedoch der lokale Speicher
+          (localStorage) Ihres Browsers genutzt, um Antworten der GitHub-API
+          zwischenzuspeichern (zuletzt aktualisiertes Datum von Repositories).
+          Diese Daten enthalten keine personenbezogenen Informationen und werden
+          ausschließlich zur Reduktion externer API-Anfragen verwendet.
+          Sie können diese Daten jederzeit über die Entwicklertools Ihres Browsers löschen.
         </p>
       </div>
 
@@ -56,13 +61,24 @@ export default function PrivacyPage() {
       </div>
 
       <div className={styles.section}>
-        <h2>5. Externe Links</h2>
+        <h2>5. Externe Dienste und Links</h2>
         <p>
-          Diese Website enthält Links zu externen Plattformen (GitHub, Xing,
+          Diese Website ruft beim Seitenaufruf automatisch die GitHub-API
+          (<a href="https://api.github.com" target="_blank" rel="noreferrer">api.github.com</a>)
+          ab, um das zuletzt aktualisierte Datum von Repositories anzuzeigen.
+          Dabei wird Ihre IP-Adresse an GitHub (GitHub, Inc., 88 Colin P Kelly Jr St,
+          San Francisco, CA 94107, USA) übermittelt. Rechtsgrundlage ist Art. 6 Abs. 1
+          lit. f DSGVO (berechtigtes Interesse an der Darstellung aktueller Projektdaten).
+          Die Anfragen werden clientseitig für eine Stunde zwischengespeichert,
+          um die Anzahl der Übertragungen zu minimieren. Informationen zur
+          Datenverarbeitung durch GitHub finden Sie in deren{' '}
+          <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noreferrer">Datenschutzerklärung</a>.
+        </p>
+        <p>
+          Diese Website enthält zudem Links zu externen Plattformen (GitHub, Xing,
           LinkedIn). Beim Anklicken dieser Links verlassen Sie diese Website.
           Für die Datenverarbeitung auf den verlinkten Seiten sind die jeweiligen
-          Anbieter verantwortlich. Es werden keine Daten an diese Dienste
-          übermittelt, solange Sie die Links nicht aktiv anklicken.
+          Anbieter verantwortlich.
         </p>
       </div>
 

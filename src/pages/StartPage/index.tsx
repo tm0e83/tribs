@@ -68,7 +68,6 @@ export default function StartPage() {
     gsap.from('a', {
       y: 75,
       opacity: 0,
-      // scale: 0,
       delay: 0.25,
       duration: 0.65,
       stagger: 0.30,

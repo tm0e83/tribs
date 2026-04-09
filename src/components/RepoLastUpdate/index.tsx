@@ -1,5 +1,12 @@
 import { useState, useEffect } from 'react';
 
+const CACHE_TTL_MS = 60 * 60 * 1000; // 1 Stunde
+
+type CacheEntry = {
+  date: string;
+  timestamp: number;
+};
+
 type RepoLastUpdateProps = {
   owner: string;
   repo: string;
@@ -8,21 +15,27 @@ type RepoLastUpdateProps = {
 
 const RepoLastUpdate: React.FC<RepoLastUpdateProps> = ({ owner, repo, className }) => {
   const [lastUpdate, setLastUpdate] = useState<string | null>(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
+    const cacheKey = `repo_last_update_${owner}_${repo}`;
+
     const fetchData = async () => {
       try {
-        setLoading(true);
-        const response = await fetch(`https://api.github.com/repos/${owner}/${repo}`);
-        
-        if (!response.ok) {
-          throw new Error('Repository nicht gefunden oder API-Limit erreicht');
+        const cached = localStorage.getItem(cacheKey);
+        if (cached) {
+          const entry: CacheEntry = JSON.parse(cached);
+          if (Date.now() - entry.timestamp < CACHE_TTL_MS) {
+            setLastUpdate(entry.date);
+            return;
+          }
         }
 
+        const response = await fetch(`https://api.github.com/repos/${owner}/${repo}`);
+
+        if (!response.ok) return;
+
         const data = await response.json();
-        
+
         const date = new Date(data.pushed_at).toLocaleDateString('de-DE', {
           day: '2-digit',
           month: '2-digit',
@@ -31,19 +44,17 @@ const RepoLastUpdate: React.FC<RepoLastUpdateProps> = ({ owner, repo, className 
           minute: '2-digit'
         });
 
+        localStorage.setItem(cacheKey, JSON.stringify({ date, timestamp: Date.now() } satisfies CacheEntry));
         setLastUpdate(date);
-      } catch (err: any) {
-        setError(err.message);
-      } finally {
-        setLoading(false);
+      } catch {
+        // kein Datum verfügbar
       }
     };
 
     fetchData();
   }, [owner, repo]);
 
-  if (loading) return '';
-  if (error) return '';
+  if (!lastUpdate) return null;
 
   return (
     <span className={className}>{lastUpdate}</span>

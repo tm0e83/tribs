@@ -25,7 +25,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, linkUrl, 
       </div>
       <div className={styles.arrow}>
         <MoveRight strokeWidth={1} />
-      </div>              
+      </div>
     </a>
   );
 }
