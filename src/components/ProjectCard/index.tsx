@@ -16,9 +16,11 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, linkUrl, 
     <a className={`${styles.project} ${styles[`bg${projectNumber}`]}`} href={linkUrl} target="_blank">
       <div className={styles.projectName}>{title}</div>
       <div className={styles.projectDescription}>{description}</div>
-      {techStack.map((tech) => (
-        <span key={tech} className={styles.tag}>{tech}</span>
-      ))}
+      <div className={styles.techStack}>
+        {techStack.map((tech) => (
+          <span key={tech} className={styles.tag}>{tech}</span>
+        ))}
+      </div>
       <div className={`last-update ${styles.repoLastUpdate}`}>
         <ActivityIcon size={12} />
         <RepoLastUpdate owner="tm0e83" repo={repo} />

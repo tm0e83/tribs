@@ -17,26 +17,26 @@
       135deg,
       #118DFF,
       color-mix(#118DFF, #000 25%)
-    );        
-  } 
-  
+    );
+  }
+
   &.bg2 {
     background: #750985;
     background: linear-gradient(
       135deg,
       #750985,
       color-mix(#750985, #000 25%)
-    );        
-  } 
-  
+    );
+  }
+
   &.bg3 {
     background: #C83D95;
     background: linear-gradient(
       135deg,
       #C83D95,
       color-mix(#C83D95, #000 25%)
-    );        
-  }       
+    );
+  }
 
   &.bg4 {
     background: #FF985E;
@@ -44,9 +44,9 @@
       135deg,
       #FF985E,
       color-mix(#FF985E, #000 25%)
-    );        
-  }       
-  
+    );
+  }
+
   .projectName {
     font-weight: 700;
     margin-bottom: 0.25rem;
@@ -56,13 +56,20 @@
     margin-bottom: 0.5rem;
     font-size: 0.8em;
   }
-  
+
+  .techStack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+  }
+
   .tag {
     background-color: rgba(255, 255, 255, 0.85);
     color: #333;
     border-radius: 5px;
-    padding: 4px 6px;
-    font-size: 0.6em;
+    padding: 3px 6px;
+    font-size: 0.65em;
+    font-weight: 600;
   }
 
   .repoLastUpdate {
@@ -83,7 +90,7 @@
     opacity: 0;
     transition: opacity 250ms ease, transform 250ms ease;
   }
-  
+
   &:hover {
     .arrow {
       opacity: 1;
