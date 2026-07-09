@@ -117,30 +117,38 @@ export default function StartPage() {
               techStack={['NextJS', 'TypeScript', 'Firebase Firestore', 'Firebase Auth', 'PlayWright', 'Husky', 'Vercel', 'Vitest', 'Cloud Functions']}
               linkUrl="http://demoshop.digitalsquares.de"
               projectNumber={1}
-              />
+            />
+            <ProjectCard
+              title="DemoShop REST API"
+              description="Der Name sagt alles. Eine REST API für den Demo-Shop."
+              repo="demoshop"
+              techStack={['NodeJS', 'TypeScript', 'Firebase', 'Fly.io']}
+              linkUrl="https://github.com/tm0e83/demoshop-rest-api"
+              projectNumber={2}
+            />
             <ProjectCard
               title="BilldBird"
               description="Ein kleines Tool für meine Finanzverwaltung."
               repo="billbird"
               techStack={['VueJS', 'TypeScript', 'Firebase RTDB', 'Firebase Auth', 'Vitest', 'Cypress', 'Husky']}
               linkUrl="http://billbird.digitalsquares.de"
-              projectNumber={2}
-              />
+              projectNumber={3}
+            />
             <ProjectCard
               title="PlaySpot"
               description="Eine Plattform für simple Glückspiele."
               repo="playspot"
               techStack={['VanillaJS', 'Web Components', 'i18next', 'JSDoc Typing', 'Firebase RTDB', 'Firebase Auth']}
               linkUrl="http://playspot.digitalsquares.de"
-              projectNumber={3}
-              />
+              projectNumber={4}
+            />
             <ProjectCard
               title="Chat"
               description="Ein Chat für meine Websites."
               repo="chat"
               techStack={['Vibe Coding', 'React JS', 'Vanilla JS', 'Firebase Firestore', 'Firebase Auth', 'Firebase Hosting', 'Cloud Functions']}
               linkUrl="https://github.com/tm0e83/chat"
-              projectNumber={4}
+              projectNumber={5}
             />
           </div>
         </div>
