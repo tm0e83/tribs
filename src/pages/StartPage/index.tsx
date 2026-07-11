@@ -121,7 +121,7 @@ export default function StartPage() {
             <ProjectCard
               title="DemoShop REST API"
               description="Der Name sagt alles. Eine REST API für den Demo-Shop."
-              repo="demoshop"
+              repo="demoshop-rest-api"
               techStack={['NodeJS', 'TypeScript', 'Firebase', 'Fly.io']}
               linkUrl="https://github.com/tm0e83/demoshop-rest-api"
               projectNumber={2}
