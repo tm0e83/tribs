@@ -3,6 +3,7 @@ name: Build and Deploy
 on:
   push:
     branches: [main]
+  workflow_dispatch:
 
 jobs:
   build-and-deploy:
@@ -22,12 +23,17 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Deploy via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        with:
-          server: w00c5229.kasserver.com
-          protocol: ftps
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./dist/
-          server-dir: /tribs/
+      - name: Install lftp
+        run: sudo apt-get update && sudo apt-get install -y lftp
+
+      - name: Deploy via lftp
+        run: |
+          lftp -c "
+          set ftp:ssl-allow no;
+          set net:max-retries 5;
+          set net:reconnect-interval-base 5;
+          set net:reconnect-interval-multiplier 1;
+          set ftp:passive-mode true;
+          open -u ${{ secrets.FTP_USERNAME }},${{ secrets.FTP_PASSWORD }} w00c5229.kasserver.com;
+          mirror -R --verbose ./dist/ /tribs/
+          "
